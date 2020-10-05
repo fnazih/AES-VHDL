@@ -1,0 +1,66 @@
+#!/bin/bash
+
+export PROJECTNAME="."
+
+# TO DO : test $PROJECTNAME
+echo "the project location is : $PROJECTNAME"
+echo "removing libs : folder plus line declaration in Modelsim.ini file"
+vdel -lib $PROJECTNAME/LIB/LIB_AES -all
+vdel -lib $PROJECTNAME/LIB/LIB_RTL -all
+vdel -lib $PROJECTNAME/LIB/LIB_BENCH -all
+
+echo "creating VHDL LIBRARY"
+vlib $PROJECTNAME/LIB/LIB_AES
+vmap LIB_AES $PROJECTNAME/LIB/LIB_AES
+vlib $PROJECTNAME/LIB/LIB_RTL
+vmap LIB_RTL $PROJECTNAME/LIB/LIB_RTL
+vlib $PROJECTNAME/LIB/LIB_BENCH
+vmap LIB_BENCH $PROJECTNAME/LIB/LIB_BENCH
+
+echo "compile third party library  : type definition package"
+vcom -work LIB_AES $PROJECTNAME/SRC/THIRDPARTY/CryptPack.vhd
+vcom -work LIB_AES $PROJECTNAME/SRC/THIRDPARTY/KeyExpansion_I_O_table.vhd
+
+echo "compile vhdl sources"
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/sbox.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/subbyte.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/shiftrows.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/addroundkey.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/mixcolumns.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/registre.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/convert_to_state.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/convert_to_bit128.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/mux.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/AESround.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/compteur.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/FSM_moore.vhd
+vcom -work LIB_RTL $PROJECTNAME/SRC/RTL/AES.vhd
+
+echo "compile vhdl test bench"
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/sbox_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/subbyte_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/shiftrows_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/addroundkey_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/mixcolumns_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/registre_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/convert_to_state_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/convert_to_bit128_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/AESround_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/compteur_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/FSM_moore_tb.vhd
+vcom -work LIB_BENCH $PROJECTNAME/SRC/BENCH/AES_tb.vhd
+
+echo "compilation finished"
+echo "start simulation..."
+#vsim  LIB_BENCH.sbox_tb_conf &
+#vsim LIB_BENCH.subbyte_tb_conf &
+#vsim LIB_BENCH.shiftrows_tb_conf &
+#vsim LIB_BENCH addroundkey_tb_conf &
+#vsim LIB_BENCH mixcolumns_tb_conf &
+#vsim LIB_BENCH registre_tb_conf &
+#vsim LIB_BENCH convert_to_state_tb_conf &
+#vsim LIB_BENCH convert_to_bit128_tb_conf &
+#vsim LIB_BENCH AESround_tb_conf &
+#vsim LIB_BENCH compteur_tb_arch &
+#vsim LIB_BENCH FSM_moore_tb_conf &
+#vsim LIB_BENCH AES_tb_conf &

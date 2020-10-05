@@ -1,0 +1,85 @@
+# //  ModelSim SE-64 10.0 Dec  4 2010 Linux 2.6.32-431.el6.x86_64
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vsim -novopt LIB_BENCH.aesround_tb_conf
+# vsim -novopt LIB_BENCH.aesround_tb_conf 
+# Loading std.standard
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_BENCH.aesround_tb_conf
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_AES.crypt_pack(body)
+# Loading lib_aes.crypt_pack(body)
+# Loading LIB_BENCH.aesround_tb_conf
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_BENCH.aesround_tb(aesround_tb_arch)
+# Loading LIB_BENCH.aesround_tb(aesround_tb_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.aesround(aesround_arch)
+# Loading lib_rtl.aesround(aesround_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.subbyte(subbyte_arch)
+# Loading lib_rtl.subbyte(subbyte_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.sbox(sbox_arch)
+# Loading lib_rtl.sbox(sbox_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.shiftrows(shiftrows_arch)
+# Loading lib_rtl.shiftrows(shiftrows_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.mixcolumns(mixcolumns_arch)
+# Loading lib_rtl.mixcolumns(mixcolumns_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.addroundkey(addroundkey_arch)
+# Loading lib_rtl.addroundkey(addroundkey_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.registre(register_arch)
+# Loading lib_rtl.registre(register_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.convert_to_state(convert_to_state_arch)
+# Loading lib_rtl.convert_to_state(convert_to_state_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.convert_to_bit128(convert_to_bit128_arch)
+# Loading lib_rtl.convert_to_bit128(convert_to_bit128_arch)
+# Refreshing /eleves/home/fatima.nazih/PCSN/Projet_VHDL/AES_FOR_STUDENTS/LIB/LIB_RTL.mux(mux_arch)
+# Loading lib_rtl.mux(mux_arch)
+add wave \
+{sim:/aesround_tb/text_i_s } \
+{sim:/aesround_tb/resetb_i_s } \
+{sim:/aesround_tb/mix_i_s } \
+{sim:/aesround_tb/enableRoundComputing_i_s } \
+{sim:/aesround_tb/currentKey_i_s } \
+{sim:/aesround_tb/clk_i_s } \
+{sim:/aesround_tb/cipher_o_s } \
+{sim:/aesround_tb/aes_end_s } 
+radix -h
+# hexadecimal
+run 1200
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(15)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(14)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(13)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(12)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(11)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(10)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(9)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(8)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(7)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(6)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(5)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(4)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(3)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(2)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(1)/inter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /aesround_tb/DUT/DUT/G1(0)/inter
